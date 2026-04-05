@@ -219,10 +219,10 @@
       return;
     }
     if (!comparison || !Number.isFinite(comparison.cosine)) {
-      similarityCornerEl.textContent = 'Cosine: -';
+      similarityCornerEl.textContent = 'Similarity: -';
       return;
     }
-    similarityCornerEl.textContent = `Cosine: ${comparison.cosine.toFixed(3)}`;
+    similarityCornerEl.textContent = `Similarity: ${comparison.cosine.toFixed(3)}`;
   }
 
   function handleWheel(event) {
