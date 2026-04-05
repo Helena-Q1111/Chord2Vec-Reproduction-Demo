@@ -1,52 +1,91 @@
-# Chord2Vec - 和弦嵌入学习
+# Chord2Vec Reproduction and Interactive Demo
 
-基于 [chord2vec](https://github.com/Sephora-M/chord2vec) 论文的 PyTorch 现代实现，使用 Hooktheory 数据集训练和弦向量表示。
+This repository contains a PyTorch-based Chord2Vec reproduction pipeline and a fully static interactive web demo.
 
-## 概述
+The project is built around Hooktheory harmony annotations and includes:
 
-Chord2Vec 使用类似 word2vec 的 skip-gram 架构学习和弦的向量表示。通过预测相邻和弦，模型学习到和弦之间的功能和声关系。
+- data preprocessing for symbolic chord events
+- skip-gram style chord embedding training
+- visualization and analysis scripts
+- multiple experiment outputs
+- a browser-based audible embedding explorer in `demo/`
 
-### 核心思想
+## What This Repo Includes
 
-- **Skip-gram 模型**: 给定一个和弦，预测其上下文和弦
-- **负采样**: 使用负采样进行高效训练
-- **和弦嵌入**: 学习到的向量捕获和弦之间的音乐关系
-  - 相似功能的和弦（如 I 和 VI）会有相近的向量
-  - 可以进行和弦类比运算（如：I:V :: IV:?）
+### 1. Reproduction Pipeline
 
-## 项目结构
+The training pipeline learns chord embeddings from local harmonic context (word2vec-style skip-gram objective with negative sampling).
 
-```
-chord2vec/
-├── __init__.py          # 包初始化
-├── model.py             # 模型定义 (SkipGram, Linear, Seq2Seq)
-├── data_processing.py   # 数据预处理
-├── train.py             # 训练脚本
-├── visualize.py         # 可视化与评估
-├── requirements.txt     # 依赖项
-└── README.md            # 本文档
-```
+Core script files are under `scripts/`:
 
-## 安装
+- `scripts/data_processing.py`: Hooktheory parsing, chord symbol conversion, vocabulary building, pair generation
+- `scripts/model.py`: model definitions
+- `scripts/train.py`: training entry point
+- `scripts/visualize.py`: t-SNE, clusters, similarity analysis and plots
+- `scripts/analyze_dataset.py`: quick dataset introspection utilities
+
+### 2. Saved Experiment Outputs
+
+Model checkpoints and artifacts are provided under `outputs/`, including several historical runs:
+
+- `outputs/output/`
+- `outputs/output_final/`
+- `outputs/output_ring_v1/` ... `outputs/output_ring_v4/`
+- `outputs/output_ring_full_v4/`
+
+Typical artifacts include:
+
+- `best_model.pt`
+- `chord_embeddings.npy`
+- `vocabulary.json`
+- `training_history.json`
+- `processed_data.pkl`
+- optional analysis outputs (`*.png`, `*.csv`, `*.json`)
+
+### 3. Interactive Frontend Demo
+
+The `demo/` folder is a pure frontend app (no backend required) that visualizes 2D chord positions and lets you hear chords directly in-browser via Tone.js.
+
+Current behavior:
+
+- colored chord points by chord family
+- gray chord labels with interaction-based highlighting
+- click to hear a chord voicing
+- click a second chord to draw a dashed connection and compute cosine similarity
+- bottom-right cosine display
+- wheel zoom (desktop) and pinch zoom (mobile)
+
+Demo data is generated from `outputs/output_ring_full_v4` and enriched with interval-step mappings derived from the Hooktheory structure.
+
+## Requirements
+
+- Python 3.10+ recommended
+- PyTorch, NumPy, Matplotlib, scikit-learn, SciPy (see `requirements.txt`)
+
+Install dependencies:
 
 ```bash
-# 安装依赖
-cd chord2vec
 pip install -r requirements.txt
 ```
 
-## 快速开始
+## Dataset
 
-### 1. 训练模型
+This project expects the Hooktheory dataset files to be available outside or alongside this repo (for retraining/reprocessing).
+
+Common path used in this workspace:
+
+- `../dataset/hooktheory/Hooktheory.json.gz`
+
+## Training and Analysis
+
+Run from the repository root.
+
+### Train
 
 ```bash
-# 基本训练（使用 Hooktheory 数据集）
-python train.py --data ../Hooktheory.json.gz --epochs 50
-
-# 完整参数
-python train.py \
-    --data ../Hooktheory.json.gz \
-    --output_dir output \
+python scripts/train.py \
+    --data ../dataset/hooktheory/Hooktheory.json.gz \
+    --output_dir outputs/output \
     --model_type skipgram \
     --embedding_dim 128 \
     --window_size 2 \
@@ -56,147 +95,64 @@ python train.py \
     --n_negative 5
 ```
 
-### 2. 可视化与评估
+### Visualize / Evaluate
 
 ```bash
-# 运行所有分析
-python visualize.py --model_dir output --all
-
-# 单独运行
-python visualize.py --model_dir output --tsne        # t-SNE 可视化
-python visualize.py --model_dir output --similarity  # 相似性分析
-python visualize.py --model_dir output --cluster     # 和弦聚类
-python visualize.py --model_dir output --history     # 训练曲线
+python scripts/visualize.py --model_dir outputs/output --all
 ```
 
-### 3. Python API 使用
+Or run individual analyses (for example `--tsne`, `--cluster`, `--similarity`, `--history`) depending on your experiment needs.
 
-```python
-import torch
-import numpy as np
-from chord2vec import SkipGramChord2Vec, load_processed_data
+## Run the Demo Locally
 
-# 加载训练好的模型
-checkpoint = torch.load('output/best_model.pt')
-model = SkipGramChord2Vec(
-    vocab_size=checkpoint['vocab_size'],
-    embedding_dim=checkpoint['embedding_dim']
-)
-model.load_state_dict(checkpoint['model_state_dict'])
-model.eval()
+Open:
 
-# 加载词汇表
-import json
-with open('output/vocabulary.json', 'r') as f:
-    vocab = json.load(f)
-chord2idx = vocab['chord2idx']
-idx2chord = {int(k): v for k, v in vocab['idx2chord'].items()}
+- `demo/index.html`
 
-# 查找相似和弦
-similar = model.most_similar(chord2idx['V'], idx2chord, top_k=5)
-print("与 V 最相似的和弦:")
-for chord, score in similar:
-    print(f"  {chord}: {score:.3f}")
+Notes:
 
-# 和弦类比
-from chord2vec import compute_analogy
-# I:V :: IV:? (预期: I 或类似的主和弦)
-results = compute_analogy(model, idx2chord, chord2idx, 'I', 'V', 'IV', top_k=5)
-print("\nI:V :: IV:?")
-for chord, score in results:
-    print(f"  {chord}: {score:.3f}")
+- internet access is required for Tone.js and sampled piano assets
+- if browser autoplay restrictions apply, audio starts after user interaction (click/touch)
 
-# 获取和弦嵌入
-embeddings = model.get_all_embeddings()
-print(f"\n嵌入矩阵形状: {embeddings.shape}")
-```
+## GitHub Pages Deployment (Demo Only)
 
-### 4. 纯前端 demo
+This repository is configured to deploy only the `demo/` directory to GitHub Pages via GitHub Actions.
 
-`demo/` 目录下提供了一个静态可听 demo：
+Workflow file:
 
-- 打开 `demo/index.html`
-- 以 `output_ring_v4` 的 embeddings 和词汇表为数据源
-- 点击和弦可播放钢琴音色，第二次点击会显示 cosine 相似度和连线
+- `.github/workflows/deploy-demo-pages.yml`
 
-## 训练参数说明
+To publish:
 
-| 参数 | 默认值 | 说明 |
-|------|--------|------|
-| `--data` | Hooktheory.json.gz | 输入数据文件 |
-| `--output_dir` | output | 输出目录 |
-| `--model_type` | skipgram | 模型类型 (skipgram/linear) |
-| `--embedding_dim` | 128 | 嵌入维度 |
-| `--window_size` | 2 | 上下文窗口大小 |
-| `--epochs` | 50 | 训练轮数 |
-| `--batch_size` | 256 | 批次大小 |
-| `--lr` | 0.001 | 学习率 |
-| `--n_negative` | 5 | 负采样数量 |
-| `--min_count` | 2 | 最小和弦出现次数 |
-| `--early_stopping` | 5 | 早停耐心值 |
+1. Push to `main`
+2. Ensure repository Pages source is set to GitHub Actions
+3. Wait for the workflow to finish
 
-## 输出文件
+## Chord Representation Notes
 
-训练完成后，`output/` 目录包含：
+The preprocessing logic is based on Hooktheory harmony entries:
 
-- `best_model.pt` - 最佳模型检查点
-- `chord_embeddings.npy` - 和弦嵌入矩阵 (NumPy 格式)
-- `vocabulary.json` - 和弦词汇表（chord2idx/idx2chord 映射）
-- `training_history.json` - 训练历史（损失曲线等）
-- `processed_data.pkl` - 预处理后的数据（可复用）
+- `root_pitch_class`
+- `root_position_intervals`
+- `inversion`
 
-## 模型架构
+Chord symbols are generated by `scripts/data_processing.py` from these fields. The demo playback now prioritizes interval-step information aligned with this original structure.
 
-### 1. SkipGramChord2Vec (默认)
+## References
 
-标准 skip-gram 模型，使用负采样：
-- 输入：中心和弦
-- 输出：预测上下文和弦
-- 损失：负采样对比损失
+- Original Chord2Vec implementation: https://github.com/Sephora-M/chord2vec
+- Hooktheory / Sheet Sage context: https://github.com/chrisdonahue/sheetsage
+- Word2Vec background: Mikolov et al., Efficient Estimation of Word Representations in Vector Space
 
-### 2. LinearChord2Vec
+## Citation
 
-线性模型，假设和弦中各音符条件独立：
-- 输入：和弦的 one-hot 编码
-- 输出：上下文和弦的概率分布
-- 损失：二元交叉熵
-
-### 3. Seq2SeqChord2Vec
-
-基于 LSTM 的编码器-解码器模型：
-- 编码器：将输入和弦序列编码为固定向量
-- 解码器：从向量生成上下文和弦序列
-- 适用于更长的上下文建模
-
-## 数据格式
-
-Hooktheory 数据集使用音阶度数表示和弦：
-- `I` - 主和弦 (Tonic)
-- `II` - 上主和弦 (Supertonic)
-- `III` - 中音和弦 (Mediant)
-- `IV` - 下属和弦 (Subdominant)
-- `V` - 属和弦 (Dominant)
-- `VI` - 下中音和弦 (Submediant)
-- `VII` - 导和弦 (Leading tone)
-
-和弦可能包含额外信息如 `7`（七和弦）、`m`（小调）等。
-
-## 参考
-
-- 原始 Chord2Vec 实现: https://github.com/Sephora-M/chord2vec
-- Word2Vec 论文: Mikolov et al., "Efficient Estimation of Word Representations in Vector Space"
-- Hooktheory 数据集: https://www.hooktheory.com/theorytab
-- Sheet Sage 项目: https://github.com/chrisdonahue/sheetsage
-
-## 引用
-
-如果使用此代码，请引用原始 chord2vec 工作和 Hooktheory 数据集来源（Sheet Sage）：
+If you use this work, please cite the Sheet Sage paper associated with the dataset source:
 
 ```bibtex
 @inproceedings{donahue2022melody,
-  title={Melody transcription via generative pre-training},
-  author={Donahue, Chris and Thickstun, John and Liang, Percy},
-  booktitle={ISMIR},
-  year={2022}
+    title={Melody transcription via generative pre-training},
+    author={Donahue, Chris and Thickstun, John and Liang, Percy},
+    booktitle={ISMIR},
+    year={2022}
 }
 ```
