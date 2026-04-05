@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chord2Vec Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="legend-corner" aria-hidden="true">
+        <span><i class="swatch major"></i>Red: Major</span>
+        <span><i class="swatch minor"></i>Blue: Minor</span>
+        <span><i class="swatch dominant"></i>Green: Dominant</span>
+        <span><i class="swatch augdim"></i>Yellow: Aug/Dim</span>
+        <span><i class="swatch other"></i>Gray: Other</span>
+      </div>
+      <div id="similarity-corner" class="similarity-corner" aria-live="polite">Similarity: -</div>
+      <svg id="plot" role="img" aria-label="Chord2Vec scatter plot"></svg>
+    </main>
+
+    <script src="https://unpkg.com/tone@14.8.49/build/Tone.js"></script>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

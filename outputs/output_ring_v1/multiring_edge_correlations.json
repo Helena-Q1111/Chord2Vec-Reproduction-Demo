@@ -1,0 +1,578 @@
+[
+  {
+    "source": "C (major)",
+    "target": "Am (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.7823250889778137
+  },
+  {
+    "source": "Am (minor)",
+    "target": "G (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.7999144792556763
+  },
+  {
+    "source": "G (major)",
+    "target": "Em (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.881756067276001
+  },
+  {
+    "source": "Em (minor)",
+    "target": "D (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8478661179542542
+  },
+  {
+    "source": "D (major)",
+    "target": "Bm (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8030423521995544
+  },
+  {
+    "source": "Bm (minor)",
+    "target": "A (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.822796642780304
+  },
+  {
+    "source": "A (major)",
+    "target": "F#m (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8303449153900146
+  },
+  {
+    "source": "F#m (minor)",
+    "target": "E (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8429901003837585
+  },
+  {
+    "source": "E (major)",
+    "target": "C#m (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8373026251792908
+  },
+  {
+    "source": "C#m (minor)",
+    "target": "B (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8454856872558594
+  },
+  {
+    "source": "B (major)",
+    "target": "G#m (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8696211576461792
+  },
+  {
+    "source": "G#m (minor)",
+    "target": "F# (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8766186237335205
+  },
+  {
+    "source": "F# (major)",
+    "target": "bEm (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8510369062423706
+  },
+  {
+    "source": "bEm (minor)",
+    "target": "Db (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8259816765785217
+  },
+  {
+    "source": "Db (major)",
+    "target": "bBm (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8639097809791565
+  },
+  {
+    "source": "bBm (minor)",
+    "target": "Ab (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.839741051197052
+  },
+  {
+    "source": "Ab (major)",
+    "target": "Fm (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8453900814056396
+  },
+  {
+    "source": "Fm (minor)",
+    "target": "Eb (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8151198625564575
+  },
+  {
+    "source": "Eb (major)",
+    "target": "Cm (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8146425485610962
+  },
+  {
+    "source": "Cm (minor)",
+    "target": "Bb (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8167302012443542
+  },
+  {
+    "source": "Bb (major)",
+    "target": "Gm (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8472512364387512
+  },
+  {
+    "source": "Gm (minor)",
+    "target": "F (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8113809823989868
+  },
+  {
+    "source": "F (major)",
+    "target": "Dm (minor)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8307194113731384
+  },
+  {
+    "source": "Dm (minor)",
+    "target": "C (major)",
+    "relation": "outer_clockwise",
+    "cosine_similarity": 0.8043918013572693
+  },
+  {
+    "source": "C7 (dominant)",
+    "target": "G7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.7258629202842712
+  },
+  {
+    "source": "G7 (dominant)",
+    "target": "D7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.7544039487838745
+  },
+  {
+    "source": "D7 (dominant)",
+    "target": "A7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.775946319103241
+  },
+  {
+    "source": "A7 (dominant)",
+    "target": "E7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.7395443320274353
+  },
+  {
+    "source": "E7 (dominant)",
+    "target": "B7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.6515512466430664
+  },
+  {
+    "source": "B7 (dominant)",
+    "target": "F#7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.7015978693962097
+  },
+  {
+    "source": "F#7 (dominant)",
+    "target": "Db7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.7977892160415649
+  },
+  {
+    "source": "Db7 (dominant)",
+    "target": "Ab7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.8642709851264954
+  },
+  {
+    "source": "Ab7 (dominant)",
+    "target": "Eb7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.7981969714164734
+  },
+  {
+    "source": "Eb7 (dominant)",
+    "target": "Bb7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.8582493662834167
+  },
+  {
+    "source": "Bb7 (dominant)",
+    "target": "F7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.7511369585990906
+  },
+  {
+    "source": "F7 (dominant)",
+    "target": "C7 (dominant)",
+    "relation": "dominant_clockwise",
+    "cosine_similarity": 0.6838551759719849
+  },
+  {
+    "source": "Cdim (dim)",
+    "target": "Gdim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.7899749875068665
+  },
+  {
+    "source": "Gdim (dim)",
+    "target": "Ddim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.7707989811897278
+  },
+  {
+    "source": "Ddim (dim)",
+    "target": "Adim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.8220838904380798
+  },
+  {
+    "source": "Adim (dim)",
+    "target": "Edim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.7714591026306152
+  },
+  {
+    "source": "Edim (dim)",
+    "target": "Bdim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.8570160269737244
+  },
+  {
+    "source": "Bdim (dim)",
+    "target": "F#dim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.8379082679748535
+  },
+  {
+    "source": "F#dim (dim)",
+    "target": "Dbdim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.7765177488327026
+  },
+  {
+    "source": "Dbdim (dim)",
+    "target": "Abdim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.8050270080566406
+  },
+  {
+    "source": "Abdim (dim)",
+    "target": "Ebdim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.7604921460151672
+  },
+  {
+    "source": "Ebdim (dim)",
+    "target": "Bbdim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.8066091537475586
+  },
+  {
+    "source": "Bbdim (dim)",
+    "target": "Fdim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.7543503046035767
+  },
+  {
+    "source": "Fdim (dim)",
+    "target": "Cdim (dim)",
+    "relation": "dim_clockwise",
+    "cosine_similarity": 0.7798666954040527
+  },
+  {
+    "source": "C (major)",
+    "target": "Am (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.7823250889778137
+  },
+  {
+    "source": "Am (minor)",
+    "target": "C7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.5947644114494324
+  },
+  {
+    "source": "C7 (dominant)",
+    "target": "C (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.7446469068527222
+  },
+  {
+    "source": "Am (minor)",
+    "target": "Cdim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.4563907980918884
+  },
+  {
+    "source": "G (major)",
+    "target": "Em (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.881756067276001
+  },
+  {
+    "source": "Em (minor)",
+    "target": "G7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.6583589315414429
+  },
+  {
+    "source": "G7 (dominant)",
+    "target": "G (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.6826499104499817
+  },
+  {
+    "source": "Em (minor)",
+    "target": "Gdim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.4855021834373474
+  },
+  {
+    "source": "D (major)",
+    "target": "Bm (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8030423521995544
+  },
+  {
+    "source": "Bm (minor)",
+    "target": "D7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.6431021690368652
+  },
+  {
+    "source": "D7 (dominant)",
+    "target": "D (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.7857736945152283
+  },
+  {
+    "source": "Bm (minor)",
+    "target": "Ddim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.5113827586174011
+  },
+  {
+    "source": "A (major)",
+    "target": "F#m (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8303449153900146
+  },
+  {
+    "source": "F#m (minor)",
+    "target": "A7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.6338792443275452
+  },
+  {
+    "source": "A7 (dominant)",
+    "target": "A (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.6690416932106018
+  },
+  {
+    "source": "F#m (minor)",
+    "target": "Adim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.5603516101837158
+  },
+  {
+    "source": "E (major)",
+    "target": "C#m (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8373026251792908
+  },
+  {
+    "source": "C#m (minor)",
+    "target": "E7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.6820485591888428
+  },
+  {
+    "source": "E7 (dominant)",
+    "target": "E (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.7697676420211792
+  },
+  {
+    "source": "C#m (minor)",
+    "target": "Edim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.5254716873168945
+  },
+  {
+    "source": "B (major)",
+    "target": "G#m (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8696211576461792
+  },
+  {
+    "source": "G#m (minor)",
+    "target": "B7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.7238081693649292
+  },
+  {
+    "source": "B7 (dominant)",
+    "target": "B (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.767076849937439
+  },
+  {
+    "source": "G#m (minor)",
+    "target": "Bdim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.5302295088768005
+  },
+  {
+    "source": "F# (major)",
+    "target": "bEm (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8510369062423706
+  },
+  {
+    "source": "bEm (minor)",
+    "target": "F#7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.6498899459838867
+  },
+  {
+    "source": "F#7 (dominant)",
+    "target": "F# (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.7561269402503967
+  },
+  {
+    "source": "bEm (minor)",
+    "target": "F#dim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.49030786752700806
+  },
+  {
+    "source": "Db (major)",
+    "target": "bBm (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8639097809791565
+  },
+  {
+    "source": "bBm (minor)",
+    "target": "Db7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.7518842220306396
+  },
+  {
+    "source": "Db7 (dominant)",
+    "target": "Db (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.8475982546806335
+  },
+  {
+    "source": "bBm (minor)",
+    "target": "Dbdim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.4404977560043335
+  },
+  {
+    "source": "Ab (major)",
+    "target": "Fm (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8453900814056396
+  },
+  {
+    "source": "Fm (minor)",
+    "target": "Ab7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.6687278747558594
+  },
+  {
+    "source": "Ab7 (dominant)",
+    "target": "Ab (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.7473042011260986
+  },
+  {
+    "source": "Fm (minor)",
+    "target": "Abdim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.5053340792655945
+  },
+  {
+    "source": "Eb (major)",
+    "target": "Cm (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8146425485610962
+  },
+  {
+    "source": "Cm (minor)",
+    "target": "Eb7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.7521138191223145
+  },
+  {
+    "source": "Eb7 (dominant)",
+    "target": "Eb (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.8069071173667908
+  },
+  {
+    "source": "Cm (minor)",
+    "target": "Ebdim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.5066407322883606
+  },
+  {
+    "source": "Bb (major)",
+    "target": "Gm (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8472512364387512
+  },
+  {
+    "source": "Gm (minor)",
+    "target": "Bb7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.7556220293045044
+  },
+  {
+    "source": "Bb7 (dominant)",
+    "target": "Bb (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.8103711009025574
+  },
+  {
+    "source": "Gm (minor)",
+    "target": "Bbdim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.5739601254463196
+  },
+  {
+    "source": "F (major)",
+    "target": "Dm (minor)",
+    "relation": "major_to_minor",
+    "cosine_similarity": 0.8307194113731384
+  },
+  {
+    "source": "Dm (minor)",
+    "target": "F7 (dominant)",
+    "relation": "minor_to_dominant",
+    "cosine_similarity": 0.6701186299324036
+  },
+  {
+    "source": "F7 (dominant)",
+    "target": "F (major)",
+    "relation": "dominant_to_major",
+    "cosine_similarity": 0.752118706703186
+  },
+  {
+    "source": "Dm (minor)",
+    "target": "Fdim (dim)",
+    "relation": "minor_to_dim",
+    "cosine_similarity": 0.5585504770278931
+  }
+]

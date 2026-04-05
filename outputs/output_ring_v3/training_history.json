@@ -1,0 +1,36 @@
+{
+  "train_losses": [
+    11.090715787349604
+  ],
+  "valid_losses": [
+    11.076055266047936
+  ],
+  "test_loss": 11.07603318996339,
+  "best_epoch": 1,
+  "args": {
+    "data": "../hooktheory/Hooktheory.json.gz",
+    "processed_data": null,
+    "output_dir": "output_ring_v3",
+    "notation": "absolute",
+    "no_annotate_unknown": false,
+    "auto_quality_min_count": 4,
+    "model_type": "skipgram",
+    "embedding_dim": 256,
+    "dropout": 0.1,
+    "window_size": 3,
+    "min_count": 2,
+    "subsample": 0.0001,
+    "epochs": 1,
+    "batch_size": 512,
+    "lr": 0.001,
+    "min_lr": 1e-06,
+    "warmup_epochs": 5,
+    "weight_decay": 0.01,
+    "n_negative": 15,
+    "grad_clip": 1.0,
+    "early_stopping": 1,
+    "scheduler": "cosine",
+    "seed": 42,
+    "device": null
+  }
+}

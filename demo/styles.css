@@ -1,0 +1,165 @@
+:root {
+  color-scheme: light;
+  --major: #e74c3c;
+  --minor: #2f6bff;
+  --dominant: #2e9f60;
+  --augdim: #f39c12;
+  --other: #7c8794;
+  --line: #2d3640;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #f6f0e6;
+  font-family: "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.app-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.legend-corner {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(10px);
+  color: #656b72;
+  font-size: 12px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.similarity-corner {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  z-index: 2;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(10px);
+  color: #1f2328;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+.legend-corner span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.swatch.major {
+  background: var(--major);
+}
+
+.swatch.minor {
+  background: var(--minor);
+}
+
+.swatch.dominant {
+  background: var(--dominant);
+}
+
+.swatch.augdim {
+  background: var(--augdim);
+}
+
+.swatch.other {
+  background: var(--other);
+}
+
+#plot {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  touch-action: none;
+}
+
+.point-group {
+  cursor: pointer;
+}
+
+.point-shape {
+  transition: transform 120ms ease, stroke 120ms ease, stroke-width 120ms ease, opacity 120ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.point-group.is-selected .point-shape {
+  stroke: #111;
+  stroke-width: 2.2;
+}
+
+.point-group.is-hover .point-shape {
+  transform: scale(1.45);
+  stroke: #111;
+  stroke-width: 1.5;
+}
+
+.node-label {
+  fill: #9aa0a6;
+  font-size: 8.5px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.node-label.is-always-highlighted {
+  fill: #111;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.node-label.is-hover,
+.node-label.is-selected {
+  fill: #111;
+  font-weight: 700;
+}
+
+.link-line {
+  stroke: var(--line);
+  stroke-width: 2.2;
+  stroke-dasharray: 8 7;
+  stroke-linecap: round;
+}
+
+.link-label {
+  fill: #111;
+  font-size: 13px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
