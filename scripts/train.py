@@ -18,7 +18,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 
-from data_processing import (
+from chord2vec.scripts.data_processing import (
     prepare_dataset, 
     load_processed_data, 
     load_hooktheory_data, 
@@ -28,7 +28,7 @@ from data_processing import (
     generate_skipgram_pairs, 
     split_data
 )
-from model import SkipGramChord2Vec, LinearChord2Vec, ChordDataset, Chord2VecTrainer
+from chord2vec.scripts.model import SkipGramChord2Vec, LinearChord2Vec, ChordDataset, Chord2VecTrainer
 
 
 def parse_args():

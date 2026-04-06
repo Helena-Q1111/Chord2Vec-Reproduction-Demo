@@ -44,7 +44,7 @@ except ImportError:
     HAS_SCIPY = False
     print("Warning: scipy not installed. Spearman correlation disabled.")
 
-from model import SkipGramChord2Vec, compute_analogy
+from chord2vec.scripts.model import SkipGramChord2Vec, compute_analogy
 
 
 ENHARMONIC_TO_SHARP = {

@@ -1,6 +1,7 @@
 # Chord2Vec Reproduction and Interactive Demo
 
 This repository contains a PyTorch-based Chord2Vec reproduction pipeline and a fully static interactive web demo.
+It demonstrates how machine learning models can learn harmonic relationships from symbolic music data and turn them into audible, explorable musical results.
 
 The project is built around Hooktheory harmony annotations and includes:
 
@@ -9,6 +10,17 @@ The project is built around Hooktheory harmony annotations and includes:
 - visualization and analysis scripts
 - multiple experiment outputs
 - a browser-based audible embedding explorer in `demo/`
+- a deployed web demo - go to /https://helena-q1111.github.io/Chord2Vec-Reproduction-Demo/
+
+## AI + Music
+
+This project satisfies the requirement to "make something using existing tools that shows a relationship to machine learning and/or AI" in the following ways:
+
+- **Machine learning process**: a word2vec-style skip-gram model with negative sampling learns chord embeddings from harmonic context.
+- **Musical artifact**: the interactive demo lets users hear chords and compare embedding-based harmonic similarity.
+- **Analysis artifact**: saved outputs include embeddings, training history, clusters, and correlation/coverage reports.
+
+
 
 ## What This Repo Includes
 
@@ -29,18 +41,8 @@ Core script files are under `scripts/`:
 Model checkpoints and artifacts are provided under `outputs/`, including several historical runs:
 
 - `outputs/output/`
-- `outputs/output_final/`
-- `outputs/output_ring_v1/` ... `outputs/output_ring_v4/`
 - `outputs/output_ring_full_v4/`
 
-Typical artifacts include:
-
-- `best_model.pt`
-- `chord_embeddings.npy`
-- `vocabulary.json`
-- `training_history.json`
-- `processed_data.pkl`
-- optional analysis outputs (`*.png`, `*.csv`, `*.json`)
 
 ### 3. Interactive Frontend Demo
 
@@ -114,19 +116,6 @@ Notes:
 - internet access is required for Tone.js and sampled piano assets
 - if browser autoplay restrictions apply, audio starts after user interaction (click/touch)
 
-## GitHub Pages Deployment (Demo Only)
-
-This repository is configured to deploy only the `demo/` directory to GitHub Pages via GitHub Actions.
-
-Workflow file:
-
-- `.github/workflows/deploy-demo-pages.yml`
-
-To publish:
-
-1. Push to `main`
-2. Ensure repository Pages source is set to GitHub Actions
-3. Wait for the workflow to finish
 
 ## Chord Representation Notes
 
